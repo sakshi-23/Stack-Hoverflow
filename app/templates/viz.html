@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<body ng-app="myApp"> 
+	
+<div >
+    <div  ng-controller="titleController as titleCtrl">
+      [[titleCtrl.name]]
+        <div ng-repeat="title in titleCtrl.titles">[[title]]</div>
+    </div>
+    
+    
+</div>
+
+
+<script src="{{ url_for('static', filename='bower_components/angular/angular.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/title/title.controller.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/title/title.service.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/grid/grid.controller.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{ url_for('static', filename='bower_components/javascript-detect-element-resize/jquery.resize.js')}}"></script>
+<script src="{{ url_for('static', filename='bower_components/angular-gridster/dist/angular-gridster.min.js') }}"></script>
+
+</body>
+</html>

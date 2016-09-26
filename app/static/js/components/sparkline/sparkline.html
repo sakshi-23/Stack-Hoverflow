@@ -1,0 +1,19 @@
+<div class="grid" gridster-item="sparklineDim">
+	<div>
+	<div class="title">Popular tags</div>
+	</div>
+	<div class='sparklegend'><button class='legend' ng-click="addChart(name)" ng-repeat="name in data">{{name}}</button>
+	</div>
+	<div class="title">Search</div>
+	<div class="sparkbottom">
+		<br>
+		<label >User ID <input ng-model="searchUser" ng-change="onChangeUser(searchUser)" ng-click="search=''" ng-model-options="{debounce: 300}"></label>
+<div style="border-bottom: solid 1px rgba(200,200,200,0.1); margin-top:15px;"></div>
+		<br>
+		<br>
+		<label >Tag <input ng-model="search" ng-change="onChange(search)" ng-click="searchUser=''" ng-model-options="{debounce: 300}"></label>
+		<br>
+		<br>
+		<button class="add-to-graph" ng-click="addChart(search)">Add to graph</button>
+	</div>
+</div>

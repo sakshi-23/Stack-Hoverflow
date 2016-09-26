@@ -1,0 +1,7 @@
+<div class="grid" gridster-item="lineChartDim">
+
+	<div class="title" ng-click="changeSize()">Language Trends</div>
+	&nbsp;<button class='legend' ng-dblclick="dblclickHandler({'name':name})" ng-click="handleMouseClick({'name':name})" ng-repeat="name in data.tags track by $index" ng-style="{'color': color(name), 'border-color': color(name)}">{{name}}</button>
+	<div class="line-chart" ></div>
+</div>
+<div class="tooltip"><span class="tooltip-related"></span><span class="tooltip-title"></span></div>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></link>
+	<link rel="stylesheet" href="{{ url_for('static', filename='bower_components/angular-gridster/dist/angular-gridster.min.css') }}"/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='bower_components/d3-context-menu/css/d3-context-menu.css') }}"/>
+</head>
+<body ng-app="myApp">
+<div id="title">Stack Hoverflow </div>
+<div >
+   <!-- <div  ng-controller="titleController as titleCtrl">
+      [[titleCtrl.name]]
+        <div ng-repeat="title in titleCtrl.titles">[[title]]</div>
+    </div>-->
+
+    <div ng-cloak gridster="gridsterOpts" ng-controller="gridController as gridCtrl">
+    		<div>
+			<span style="cursor: pointer" ng-if="gridCtrl.showHelp" class="help-msg" ng-click="gridCtrl.helpClick()">Click on any line or node to visualize individual posts x</span>
+			</div>
+    	<div class="added-msg" ng-show="gridCtrl.showFluxMsg" >[[gridCtrl.msg]]</div>
+    	<div ng-if="gridCtrl.lineChartData" line-chart add="gridCtrl.getfluxData(tag)" data="gridCtrl.lineChartData" added="gridCtrl.showFluxMsg" lineChanged="gridCtrl.lineChanged"></div>
+    	<div sparkline add="gridCtrl.getfluxData(tag)"></div>
+    	<div class="fluxGrid">
+	<div id="flux-tooltip">
+		<div id="tooltip-related"></div>
+		<div id="tooltip-title"></div>
+		<div id="tooltip-tags"></div>
+	</div>
+    	<div flux-chart-grid ng-repeat="flux in gridCtrl.fluxCharts" data="flux" index="$index" add="gridCtrl.getfluxData(tag)" remove="gridCtrl.removeFLux($index)" colortags="gridCtrl.colortags"></div>
+		</div>
+    	<div ng-if="gridCtrl.fluxCharts.length>0" link-graph data="gridCtrl.graphResults" add="gridCtrl.getfluxData(tag)"></div>
+	</div>
+</div>
+
+
+
+<script src="{{ url_for('static', filename='bower_components/angular/angular.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/title/title.controller.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/title/title.service.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/grid/grid.controller.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/line/line-chart.directive.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/flux/flux.directive.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/graph/link-graph.directive.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/sparkline/sparkline.directive.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/services/common.service.js') }}"></script>
+
+<script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{ url_for('static', filename='bower_components/d3/d3.min.js')}}"></script>
+<script src="{{ url_for('static', filename='bower_components/d3-context-menu/js/d3-context-menu.js')}}"></script>
+<script src="{{ url_for('static', filename='bower_components/javascript-detect-element-resize/jquery.resize.js')}}"></script>
+<script src="{{ url_for('static', filename='bower_components/angular-gridster/dist/angular-gridster.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/moment/min/moment.min.js') }}"></script>
+</body>
+</html>

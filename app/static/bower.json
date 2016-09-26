@@ -1,0 +1,29 @@
+{
+  "name": "y",
+  "authors": [
+    "sakshi <sakshi.2392@gmail.com>"
+  ],
+  "description": "files to download",
+  "main": "y",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-gridster": "~0.13.5",
+    "angular": "~1.4.7",
+    "jquery": "~2.1.4",
+    "d3": "~3.5.10",
+    "moment": "~2.10.6",
+    "d3-context-menu": "*"
+  }
+}
